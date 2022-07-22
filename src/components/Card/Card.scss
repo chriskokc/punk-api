@@ -4,34 +4,34 @@
     border-radius: 0.8rem;
     background-clip: content-box;
     box-shadow: inset 0 0 0 0.8rem $padding-color;
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
-    width: 46%;
+    width: 50%;
     height: 15rem;
 
     &__image {
         display: block;
         width: 25%;
-        min-height: 6.5rem;
+        min-height: 5.5rem;
         max-height: 10rem;
         float: left;
-        margin: 0.4rem;
+        margin: 0.4rem 0.3rem;
     }
 
     &__title {
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     &__tagline {
         font-style: italic;
         font-weight: 700;
-        font-size: 0.7rem;
-        margin: 0.5rem 0 0.6rem;
+        font-size: 0.6rem;
+        margin: 0.5rem 0 0.8rem;
     }
 
     &__description {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
 }
