@@ -5,7 +5,6 @@ const Card = ({ beers }) => {
         // look for the first "." after 50 characters
         let adjustedDescriptionIndex = beer.description.indexOf(".", 50) + 1;
         const adjustedDescription = beer.description.substring(0, adjustedDescriptionIndex);
-        console.log(adjustedDescription);
 
         return (
             <div key={beer.id} className="card">
