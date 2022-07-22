@@ -1,13 +1,18 @@
 @use "../../assets/scss/variables" as *;
 
 .card-list {
-    padding: 2rem 1rem;
+    padding: 2rem 1.3rem;
     background-color: $background-color;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    left: 5.9rem;
     gap: 1.3rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .card-list {
+        padding: 2.3rem 1.2rem;
+    }
+    
 }

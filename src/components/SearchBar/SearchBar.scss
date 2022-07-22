@@ -7,3 +7,11 @@
     font-size: 1rem;
     font-weight: 500;
 }
+
+@media screen and (min-width: 1024px) {
+    .search {    
+        margin: 3rem 0.9rem 10rem;
+        width: 90%;
+        height: 2rem;
+    }
+}
