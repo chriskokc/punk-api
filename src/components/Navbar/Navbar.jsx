@@ -1,9 +1,10 @@
 import "./Navbar.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar = () => {
     return (
         <form action="" className="navbar">
-            <input type="text"  placeholder="Search.." className="navbar__search"/>
+            <SearchBar />;
             <div className="navbar__content">
                 <label htmlFor="" className="navbar__label--vol">High ABV (&gt; 6.0%)</label>
                 <input type="checkbox" className="navbar__checkbox--vol"/>
