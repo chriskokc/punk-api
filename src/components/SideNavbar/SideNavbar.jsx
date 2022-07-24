@@ -1,4 +1,4 @@
-import "./Navbar.scss";
+import "./SideNavbar.scss";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Navbar = () => {
