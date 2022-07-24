@@ -27,12 +27,14 @@
     &__tagline {
         font-style: italic;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.8rem;
         margin: 0.5rem 0 0.8rem;
     }
 
     &__description {
         font-size: 1rem;
+        font-weight: 500;
+        font-family: $brand-font;
     }
 
 }
@@ -56,7 +58,7 @@
         }
     
         &__tagline {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin: 1.5rem 0;
         }
     

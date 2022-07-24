@@ -1,5 +1,5 @@
 @use "./variables" as *;
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap');
 
 * {
     color: $text-color;
@@ -7,4 +7,9 @@
     padding: 0;
     margin: 0;
     font-family: $primary-font;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
 }

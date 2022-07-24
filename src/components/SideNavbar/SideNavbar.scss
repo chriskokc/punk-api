@@ -1,12 +1,12 @@
 @use "../../assets/scss/variables" as *;
 
-.navbar {
+.side-navbar {
     position: fixed;
     width: 25%;
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: $navbar-color;
+    background-color: $sidenav-color;
 
     &__content {
         display: grid;
@@ -52,7 +52,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .navbar {
+    .side-navbar {
         width: 20%;
 
         &__content {
