@@ -1,22 +1,14 @@
 import "./Card.scss";
 
-const Card = ({ beers }) => {
-    const BeerJSX = beers.map(beer => {
-        // look for the first "." after 50 characters
-        let adjustedDescriptionIndex = beer.description.indexOf(".", 50) + 1;
-        const adjustedDescription = beer.description.substring(0, adjustedDescriptionIndex);
-
-        return (
-            <div key={beer.id} className="card">
-                <img className="card__image" src={beer.image_url} alt="Beer image" />
-                <h2 className="card__title">{beer.name}</h2>
-                <h3 className="card__tagline">{beer.tagline}</h3>
-                <p className="card__description">{adjustedDescription}</p>
-            </div>
-        );
-    }); 
-
-    return BeerJSX;
-}
+const Card = ({ beerID , beerImage , beerName , beerTagline, beerDescription }) => {
+    return (
+        <div className="card" key={beerID}>
+            <img className="card__image" src={beerImage} alt="Beer image" />
+            <h2 className="card__title">{beerName}</h2>
+            <h3 className="card__tagline">{beerTagline}</h3>
+            <p className="card__description">{beerDescription}</p>
+        </div>
+    );
+};
 
 export default Card;
