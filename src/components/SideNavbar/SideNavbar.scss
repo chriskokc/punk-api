@@ -7,6 +7,18 @@
     left: 0;
     bottom: 0;
     background-color: $sidenav-color;
+    z-index: 2;
+
+    &__white-cross {
+        margin: 1.3rem;
+        position: absolute;
+        right: 0;
+        font-size: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
     &__content {
         display: grid;
