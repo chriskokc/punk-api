@@ -5,7 +5,7 @@ import CardList from "../CardList/CardList";
 
 const Main = () => {
     const BEER_ENDPOINT = "https://api.punkapi.com/v2/beers";
-    const [beers, setBeers] = useState([]);
+    const [beers, setBeers] = useState();
   
     const getBeer = async () => {
         const response = await fetch(BEER_ENDPOINT);
