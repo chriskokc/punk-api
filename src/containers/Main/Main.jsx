@@ -15,7 +15,7 @@ const Main = () => {
 
     return (
         <div className="main">
-            <h1 className="main__title">Find you favourite beers</h1>
+            <h1 className="main__title">Find you favourite beers 🍺</h1>
             <Button label="Get Beers!" onClick={getBeer}/>
             {beers && <CardList beersArr={beers}/>}
         </div>
