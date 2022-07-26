@@ -7,3 +7,19 @@ button {
     font-weight: 700;
     font-family: $brand-font;
 }
+
+@media screen and (min-width: 768px) {
+    button {    
+        margin: 1.5rem 8rem 13rem;
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    button {    
+        margin: 2rem 13rem 10rem;
+        padding: 0.5rem;
+        font-size: 1.3rem;
+    }
+}
