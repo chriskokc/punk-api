@@ -10,7 +10,7 @@ const CardList = ({ beersArr }) => {
 
       return (
          <Card 
-            beerID={beerObj.first_brewed}
+            key={beerObj.id}
             beerImage={beerObj.image_url}
             beerName={beerObj.name}
             beerTagline={beerObj.tagline}
