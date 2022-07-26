@@ -1,25 +1,21 @@
-import { useState } from "react";
-import "./Main.scss";
-import Button from "../../components/Button/Button";
+import { useState, useEffect } from "react";
 import CardList from "../CardList/CardList";
 
 const Main = () => {
-    const BEER_ENDPOINT = "https://api.punkapi.com/v2/beers";
+    const url = "https://api.punkapi.com/v2/beers";
     const [beers, setBeers] = useState();
   
     const getBeer = async () => {
-        const response = await fetch(BEER_ENDPOINT);
+        const response = await fetch(url);
         const data = await response.json();
         setBeers(data);
     };
 
-    return (
-        <div className="main">
-            <h1 className="main__title">Find you favourite beers 🍺</h1>
-            <Button label="Get Beers!" onClick={getBeer}/>
-            {beers && <CardList beersArr={beers}/>}
-        </div>
-    );
+    useEffect(()=>{
+        getBeer();
+    }, []);
+
+    return beers && <CardList beersArr={beers}/>;
 };
 
 export default Main;
