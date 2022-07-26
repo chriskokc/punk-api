@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="navbar">
         { showSideNav && <SideNavbar toggleSideNav={toggleSideNav}/> }
         <img className="navbar__menu" src={menu} alt="menu icon" onClick={toggleSideNav}/>
-        <a className="navbar__brand" href="#">CK brewery</a>
+        <a className="navbar__brand" href="https://punkapi.com/documentation/v2">CK brewery</a>
     </nav>
    );
 

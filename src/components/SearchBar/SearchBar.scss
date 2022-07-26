@@ -1,10 +1,10 @@
 @use "../../assets/scss/variables" as *;
 
 .search {
-    margin: 4.5rem 0.5rem 10rem;
+    margin: 5rem 0.5rem 0;
     width: 85%;
     height: 1.8rem;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     padding: 0.5rem;
     font-weight: 700;
     font-family: $brand-font;
@@ -12,10 +12,20 @@
     border-radius: 0.5rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .search {    
-        margin: 4.5rem 0.9rem 10rem;
+        margin: 5rem 0.8rem 0;
         width: 90%;
         height: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .search {    
+        margin: 6rem 0.9rem 0;
+        width: 90%;
+        height: 2rem;
+        font-size: 1.8rem;
     }
 }
