@@ -1,14 +1,15 @@
 import "./SideNavbar.scss";
 import whiteCross from "../../assets/images/white-cross.png";
 import SearchBar from "../SearchBar/SearchBar";
-import Button from "../Button/Button";
+import SearchButton from "../SearchButton/SearchButton";
 
-const SideNavbar = ({ toggleSideNav }) => {
+const SideNavbar = ({ toggleSideNav , value , onSubmit , onChange }) => {
+
     return (
-        <form action="" className="side-navbar">
+        <form className="side-navbar" onSubmit={onSubmit}>
             <img className="side-navbar__white-cross" src={whiteCross} alt="white cross" onClick={toggleSideNav}/>
-            <SearchBar />
-            <Button label="Search"/>
+            <SearchBar value={value} onChange={onChange}/>
+            <SearchButton label="Search"/>
             <div className="side-navbar__content">
                 <label htmlFor="" className="side-navbar__label--vol">High ABV (&gt; 6.0%)</label>
                 <input type="checkbox" className="side-navbar__checkbox--vol"/>
