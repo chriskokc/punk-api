@@ -1,7 +1,7 @@
 import "./SearchButton.scss";
 
 const SearchButton = ({ label }) => {
-    return <input type="submit" value={label} className="search-button"/>;
+    return <button type="submit" id="search-button">{label}</button>;
 };
 
 export default SearchButton;
