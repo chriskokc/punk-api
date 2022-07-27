@@ -11,7 +11,7 @@ const Navbar = () => {
         return setShowSideNav(!showSideNav);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = () => {
         alert(searchTerm);
     };
 
