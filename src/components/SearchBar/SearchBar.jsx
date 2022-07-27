@@ -1,15 +1,13 @@
 import "./SearchBar.scss";
 
-const SearchBar = ({ value , onChange}) => {
+const SearchBar = () => {
     return (
     <input
         id="search-bar"
         type="search" 
-        placeholder="Find beer" 
+        placeholder="Find Beers.." 
         name="q" 
         className="search"
-        value={value}
-        onChange={onChange}
     />
     );
 };

@@ -1,7 +1,6 @@
 import Card from "../../components/Card/Card";
 import "./CardList.scss";
 
-
 const CardList = ({ beersArr }) => {
    const beerJSX = beersArr.map((beerObj) => {
       // look for the first "." after 50 characters

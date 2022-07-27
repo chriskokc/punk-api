@@ -2,10 +2,10 @@ import "./Form.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchButton from "../SearchButton/SearchButton";
 
-const Form = ({ value , onSubmit , onChange }) => {
+const Form = ({ onSubmit }) => {
     return (
         <form onSubmit={onSubmit}>
-            <SearchBar value={value} onChange={onChange}/>
+            <SearchBar />
             <SearchButton label="Search"/>
             <div className="form">
                 <label htmlFor="high-ABV" id="high-ABV" className="form__label--vol">High ABV (&gt; 6.0%)</label>

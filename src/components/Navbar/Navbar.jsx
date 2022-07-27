@@ -11,17 +11,18 @@ const Navbar = () => {
         return setShowSideNav(!showSideNav);
     };
 
-    const handleSubmit = () => {
-        alert(searchTerm);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const userSearchValue = event.target.elements[0].value;
     };
 
-    const handleSearch = (event) => {
-        setSearchTerm(event.target.value);
+    const handleFilters = (event) => {
+        console.log(event.target.value);
     }
 
    return (
     <nav className="navbar">
-        { showSideNav && <SideNavbar toggleSideNav={toggleSideNav} value={searchTerm} onSubmit={handleSubmit} onChange={handleSearch}/> }
+        { showSideNav && <SideNavbar toggleSideNav={toggleSideNav} value={searchTerm} onSubmit={handleSubmit} onChange={handleFilters}/> }
         <img className="navbar__menu" src={menu} alt="menu icon" onClick={toggleSideNav}/>
         <a className="navbar__brand" href="https://punkapi.com/documentation/v2">CK brewery</a>
     </nav>
