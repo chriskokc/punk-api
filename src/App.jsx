@@ -6,18 +6,12 @@ import "./App.scss";
 const App = () => {
   const [beers, setBeers] = useState();
   const [searchValue, setSearchValue] = useState();
-  const [ABV, setABV] = useState(false);
 
-  const getBeer = async (searchTerm, abv) => {
-
+  const getBeer = async (searchTerm) => {
     let url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
 
     if (searchTerm) {
       url += `&beer_name=${searchTerm}`;
-    }
-
-    if (ABV) {
-      url += `abv_gt=${abv}`;
     }
 
     const response = await fetch(url);
@@ -33,16 +27,20 @@ const App = () => {
 
   const handleFilters = (event) => {
     console.log(event.target);
-  }
+  };
 
   useEffect(() => {
-    getBeer(searchValue, ABV);
-  }, [searchValue, ABV]);
+    getBeer(searchValue);
+  }, [searchValue]);
 
   return (
     <>
-        <Navbar value={searchValue} onSubmit={handleSubmit} onChange={handleFilters}/>
-        <Main beers={beers}/>
+      <Navbar
+        value={searchValue}
+        onSubmit={handleSubmit}
+        onChange={handleFilters}
+      />
+      <Main beers={beers} />
     </>
   );
 };
