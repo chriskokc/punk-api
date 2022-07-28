@@ -6,15 +6,21 @@ import "./App.scss";
 const App = () => {
   const [beers, setBeers] = useState();
   const [searchValue, setSearchValue] = useState();
+  const [isABVChecked, setIsABVChecked] = useState(false);
 
-  const getBeer = async (searchTerm) => {
-    let url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
+  const getBeer = async (searchTerm, isABVBoxChecked) => {
+    const url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
+    const queryParams = [];
 
     if (searchTerm) {
-      url += `&beer_name=${searchTerm}`;
+      queryParams.push(`&beer_name=${searchTerm}`);
     }
 
-    const response = await fetch(url);
+    if (isABVBoxChecked) {
+      queryParams.push(`&abv_gt=6`);
+    }
+
+    const response = await fetch(url + queryParams.join(""));
     const data = await response.json();
     setBeers(data);
   };
@@ -26,12 +32,14 @@ const App = () => {
   };
 
   const handleFilters = (event) => {
-    console.log(event.target);
+    if (event.target.classList[0].includes("vol")) {
+      setIsABVChecked(!isABVChecked);
+    }
   };
 
   useEffect(() => {
-    getBeer(searchValue);
-  }, [searchValue]);
+    getBeer(searchValue, isABVChecked);
+  }, [searchValue, isABVChecked]);
 
   return (
     <>
