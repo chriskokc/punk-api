@@ -22,7 +22,7 @@ const Form = ({ onSubmit, onChange }) => {
           id="high-IBU"
           className="form__label--bitterness"
         >
-          High IBU (&gt; 50)
+          High IBU (&gt; 50.0)
         </label>
         <input
           type="checkbox"

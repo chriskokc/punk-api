@@ -9,12 +9,14 @@ const App = () => {
   const [isABVChecked, setIsABVChecked] = useState(false);
   const [isIBUChecked, setIsIBUChecked] = useState(false);
   const [isClassicChecked, setIsClassicChecked] = useState(false);
+  const [isAcidityChecked, setIsAcidityChecked] = useState(false);
 
   const getBeer = async (
     searchTerm,
     isABVBoxChecked,
     isIBUBoxChecked,
-    isClassicBoxChecked
+    isClassicBoxChecked,
+    isAcidityBoxChecked
   ) => {
     const url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
     const queryParams = [];
@@ -37,7 +39,18 @@ const App = () => {
 
     const response = await fetch(url + queryParams.join(""));
     const data = await response.json();
-    setBeers(data);
+
+    // pH value filters is not available in the Punk API
+    // i.e manual filters is required
+    if (isAcidityBoxChecked) {
+      let deepCopyBeerArr = [...data];
+      const filteredBeerByAcidity = deepCopyBeerArr.filter((beer) => {
+        return beer.ph < 4;
+      });
+      setBeers(filteredBeerByAcidity);
+    } else {
+      setBeers(data);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -57,11 +70,27 @@ const App = () => {
     if (event.target.classList[0].includes("bitterness")) {
       setIsIBUChecked(!isIBUChecked);
     }
+
+    if (event.target.classList[0].includes("acidity")) {
+      setIsAcidityChecked(!isAcidityChecked);
+    }
   };
 
   useEffect(() => {
-    getBeer(searchValue, isABVChecked, isIBUChecked, isClassicChecked);
-  }, [searchValue, isABVChecked, isIBUChecked, isClassicChecked]);
+    getBeer(
+      searchValue,
+      isABVChecked,
+      isIBUChecked,
+      isClassicChecked,
+      isAcidityChecked
+    );
+  }, [
+    searchValue,
+    isABVChecked,
+    isIBUChecked,
+    isClassicChecked,
+    isAcidityChecked,
+  ]);
 
   return (
     <>
