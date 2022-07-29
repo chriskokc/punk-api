@@ -9,11 +9,11 @@ button {
     padding: 0.2rem;
     font-weight: 700;
     font-family: $brand-font;
-    background-color: $navbar-color;
+    background-image: $card-color;
     
     &:hover {
         cursor: pointer;
-        background-color: $background-color;
+        opacity: 0.8;
     }
 }
 

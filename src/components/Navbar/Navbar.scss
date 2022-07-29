@@ -1,7 +1,7 @@
 @use "../../assets/scss/variables" as *;
 
 .navbar {
-    background-color: $navbar-color;
+    background-image: $background-color;
     display: flex;
     justify-content: space-between;
 
@@ -18,7 +18,7 @@
 
     &__brand {
         font-family: $brand-font;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.8rem;
         padding: 1rem;
         color: $menu-color;

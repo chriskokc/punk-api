@@ -57,6 +57,10 @@ const App = () => {
     event.preventDefault();
     const userSearchValue = event.target.elements[0].value;
     setSearchValue(userSearchValue);
+
+    if (!userSearchValue) {
+      alert("Please type keywords to search for beers.");
+    }
   };
 
   const handleFilters = (event) => {
