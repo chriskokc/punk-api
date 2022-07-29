@@ -7,9 +7,15 @@ const App = () => {
   const [beers, setBeers] = useState();
   const [searchValue, setSearchValue] = useState();
   const [isABVChecked, setIsABVChecked] = useState(false);
+  const [isIBUChecked, setIsIBUChecked] = useState(false);
   const [isClassicChecked, setIsClassicChecked] = useState(false);
 
-  const getBeer = async (searchTerm, isABVBoxChecked, isClassicBoxChecked) => {
+  const getBeer = async (
+    searchTerm,
+    isABVBoxChecked,
+    isIBUBoxChecked,
+    isClassicBoxChecked
+  ) => {
     const url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
     const queryParams = [];
 
@@ -18,7 +24,11 @@ const App = () => {
     }
 
     if (isABVBoxChecked) {
-      queryParams.push(`&abv_gt=6`);
+      queryParams.push("&abv_gt=6");
+    }
+
+    if (isIBUBoxChecked) {
+      queryParams.push("&ibu_gt=50");
     }
 
     if (isClassicBoxChecked) {
@@ -43,11 +53,15 @@ const App = () => {
     if (event.target.classList[0].includes("range")) {
       setIsClassicChecked(!isClassicChecked);
     }
+
+    if (event.target.classList[0].includes("bitterness")) {
+      setIsIBUChecked(!isIBUChecked);
+    }
   };
 
   useEffect(() => {
-    getBeer(searchValue, isABVChecked, isClassicChecked);
-  }, [searchValue, isABVChecked, isClassicChecked]);
+    getBeer(searchValue, isABVChecked, isIBUChecked, isClassicChecked);
+  }, [searchValue, isABVChecked, isIBUChecked, isClassicChecked]);
 
   return (
     <>
