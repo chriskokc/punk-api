@@ -1,12 +1,13 @@
 import "./Form.scss";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchButton from "../SearchButton/SearchButton";
+import Button from "../Button/Button";
 
 const Form = ({ onSubmit, onChange }) => {
   return (
     <form onSubmit={onSubmit}>
       <SearchBar />
-      <SearchButton label="Search" />
+      <Button label="Reset" isPrimary={false} />
+      <Button label="Search" isPrimary={true} />
       <div className="form">
         <label htmlFor="high-ABV" id="high-ABV" className="form__label--vol">
           High ABV (&gt; 6.0%)

@@ -6,7 +6,7 @@
     justify-content: space-between;
 
     &__menu {
-        filter: opacity(0.9) drop-shadow(0 0 0 $menu-color);
+        filter: opacity(0.9) drop-shadow(0 0 0 $brand-color);
         padding: 1.2rem;
         width: 3.8rem;
         height: 3.9rem;
@@ -21,7 +21,7 @@
         font-weight: 700;
         font-size: 1.8rem;
         padding: 1rem;
-        color: $menu-color;
+        color: $brand-color;
     }
 }
 

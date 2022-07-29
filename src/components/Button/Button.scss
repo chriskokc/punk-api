@@ -1,38 +1,57 @@
 @use "../../assets/scss/variables" as *;
 
-button {
+.button {
     position: relative;
     top: 1.2rem;
-    left: 5rem;
+    left: 1.6rem;
     margin-bottom: 10rem;
     border: 1px solid $text-color;
+    border-radius: 0.3rem;
     padding: 0.2rem;
+    width: 35%;
     font-weight: 700;
+    font-size: 0.8rem;
     font-family: $brand-font;
-    background-image: $card-color;
+    background-color: $brand-color;
+    color: #FFF;
     
     &:hover {
         cursor: pointer;
         opacity: 0.8;
     }
+
+    &--secondary {
+     background-image: $card-color;
+     color: $frame-color;
+     left: 1rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
-    button {
+    .button {
         top: 1rem;
-        left: 8.5rem;
+        left: 2.6rem;
         margin-bottom: 13rem;
         padding: 0.3rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
+
+        &--secondary {
+            left: 1.6rem;
+        }
     }
 }
 
 @media screen and (min-width: 1024px) {
-    button {    
+    .button {    
         top: 1.5rem;
-        left: 12rem;
+        left: 3.5rem;
         margin-bottom: 12rem;
         padding: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        width: 35%;
+
+        &--secondary {
+            left: 1.5rem;
+        }
     }
 }
