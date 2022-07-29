@@ -1,15 +1,15 @@
 import "./SearchBar.scss";
 
 const SearchBar = () => {
-    return (
+  return (
     <input
-        id="search-bar"
-        type="search" 
-        placeholder="Find Beers.." 
-        name="q" 
-        className="search"
+      id="search-bar"
+      type="search"
+      placeholder="🔎 Find Beers.."
+      name="q"
+      className="search"
     />
-    );
+  );
 };
 
 export default SearchBar;

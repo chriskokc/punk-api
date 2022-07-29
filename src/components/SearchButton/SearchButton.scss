@@ -9,6 +9,12 @@ button {
     padding: 0.2rem;
     font-weight: 700;
     font-family: $brand-font;
+    background-color: $navbar-color;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: $background-color;
+    }
 }
 
 @media screen and (min-width: 768px) {
