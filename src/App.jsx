@@ -7,8 +7,9 @@ const App = () => {
   const [beers, setBeers] = useState();
   const [searchValue, setSearchValue] = useState();
   const [isABVChecked, setIsABVChecked] = useState(false);
+  const [isClassicChecked, setIsClassicChecked] = useState(false);
 
-  const getBeer = async (searchTerm, isABVBoxChecked) => {
+  const getBeer = async (searchTerm, isABVBoxChecked, isClassicBoxChecked) => {
     const url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
     const queryParams = [];
 
@@ -18,6 +19,10 @@ const App = () => {
 
     if (isABVBoxChecked) {
       queryParams.push(`&abv_gt=6`);
+    }
+
+    if (isClassicBoxChecked) {
+      queryParams.push(`&brewed_before=05-2007}`);
     }
 
     const response = await fetch(url + queryParams.join(""));
@@ -35,11 +40,14 @@ const App = () => {
     if (event.target.classList[0].includes("vol")) {
       setIsABVChecked(!isABVChecked);
     }
+    if (event.target.classList[0].includes("range")) {
+      setIsClassicChecked(!isClassicChecked);
+    }
   };
 
   useEffect(() => {
-    getBeer(searchValue, isABVChecked);
-  }, [searchValue, isABVChecked]);
+    getBeer(searchValue, isABVChecked, isClassicChecked);
+  }, [searchValue, isABVChecked, isClassicChecked]);
 
   return (
     <>
