@@ -10,13 +10,15 @@ const App = () => {
   const [isIBUChecked, setIsIBUChecked] = useState(false);
   const [isClassicChecked, setIsClassicChecked] = useState(false);
   const [isAcidityChecked, setIsAcidityChecked] = useState(false);
+  const [isReset, setIsReset] = useState(false);
 
   const getBeer = async (
     searchTerm,
     isABVBoxChecked,
     isIBUBoxChecked,
     isClassicBoxChecked,
-    isAcidityBoxChecked
+    isAcidityBoxChecked,
+    isResetClicked
   ) => {
     const url = `https://api.punkapi.com/v2/beers?page=1&per_page=80`;
     const queryParams = [];
@@ -35,6 +37,12 @@ const App = () => {
 
     if (isClassicBoxChecked) {
       queryParams.push(`&brewed_before=05-2007}`);
+    }
+
+    if (isResetClicked) {
+      while (queryParams.length > 0) {
+        queryParams.pop();
+      }
     }
 
     const response = await fetch(url + queryParams.join(""));
@@ -80,13 +88,19 @@ const App = () => {
     }
   };
 
+  const handleReset = (event) => {
+    event.preventDefault();
+    setIsReset(!isReset);
+  };
+
   useEffect(() => {
     getBeer(
       searchValue,
       isABVChecked,
       isIBUChecked,
       isClassicChecked,
-      isAcidityChecked
+      isAcidityChecked,
+      isReset
     );
   }, [
     searchValue,
@@ -94,13 +108,14 @@ const App = () => {
     isIBUChecked,
     isClassicChecked,
     isAcidityChecked,
+    isReset,
   ]);
 
   return (
     <>
       <Navbar
         value={searchValue}
-        onSubmit={handleSubmit}
+        onSubmit={isReset ? handleReset : handleSubmit}
         onChange={handleFilters}
       />
       <Main beers={beers} />

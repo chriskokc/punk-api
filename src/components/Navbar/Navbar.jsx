@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import menu from "../../assets/images/menu-icon.png";
 import SideNavbar from "../SideNavbar/SideNavbar";
 
-const Navbar = ({ value, onSubmit, onChange }) => {
+const Navbar = ({ value, onSubmit, onClick, onChange }) => {
   const [showSideNav, setShowSideNav] = useState(false);
 
   const toggleSideNav = () => {
