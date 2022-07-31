@@ -35,3 +35,30 @@ it("should display SideNavbar on clicking the hamburger menu", () => {
   expect(rangeLabel).toBeInTheDocument();
   expect(acidicLabel).toBeInTheDocument();
 });
+
+it("should hide SideNavbar on clicking the white cross", () => {
+  render(<Navbar />);
+
+  const hamburgerMenu = screen.getByRole("img");
+  userEvent.click(hamburgerMenu);
+
+  const whiteCross = screen.getByAltText("white cross");
+  expect(whiteCross).toBeTruthy();
+  userEvent.click(whiteCross);
+
+  const searchBar = screen.queryByPlaceholderText(/Find Beers../i);
+  const searchButton = screen.queryByRole("button", { name: /search/i });
+  const resetButton = screen.queryByRole("button", { name: /reset/i });
+  const abvLabel = screen.queryByText(/high abv/i);
+  const ibuLabel = screen.queryByText(/high ibu/i);
+  const rangeLabel = screen.queryByText(/classic range/i);
+  const acidicLabel = screen.queryByText(/acidic/i);
+
+  expect(searchBar).toBeFalsy();
+  expect(searchButton).toBeFalsy();
+  expect(resetButton).toBeFalsy();
+  expect(abvLabel).toBeFalsy();
+  expect(ibuLabel).toBeFalsy();
+  expect(rangeLabel).toBeFalsy();
+  expect(acidicLabel).toBeFalsy();
+});
