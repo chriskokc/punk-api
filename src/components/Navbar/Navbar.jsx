@@ -27,9 +27,7 @@ const Navbar = ({ value, onSubmit, onChange, onClick }) => {
         alt="menu icon"
         onClick={toggleSideNav}
       />
-      <a className="navbar__brand" href="https://punkapi.com/documentation/v2">
-        CK brewery
-      </a>
+      <p className="navbar__brand">CK brewery</p>
     </nav>
   );
 };
