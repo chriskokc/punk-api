@@ -2,7 +2,7 @@ import "./SideNavbar.scss";
 import whiteCross from "../../assets/images/white-cross.png";
 import Form from "../Form/Form";
 
-const SideNavbar = ({ toggleSideNav, onSubmit, onChange }) => {
+const SideNavbar = ({ toggleSideNav, onSubmit, onChange, onClick }) => {
   return (
     <div className="side-navbar">
       <img
@@ -11,7 +11,7 @@ const SideNavbar = ({ toggleSideNav, onSubmit, onChange }) => {
         alt="white cross"
         onClick={toggleSideNav}
       />
-      <Form onSubmit={onSubmit} onChange={onChange} />
+      <Form onSubmit={onSubmit} onChange={onChange} onClick={onClick} />
     </div>
   );
 };

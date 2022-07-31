@@ -3,7 +3,7 @@ import "./Navbar.scss";
 import menu from "../../assets/images/menu-icon.png";
 import SideNavbar from "../SideNavbar/SideNavbar";
 
-const Navbar = ({ value, onSubmit, onClick, onChange }) => {
+const Navbar = ({ value, onSubmit, onChange, onClick }) => {
   const [showSideNav, setShowSideNav] = useState(false);
 
   const toggleSideNav = () => {
@@ -18,6 +18,7 @@ const Navbar = ({ value, onSubmit, onClick, onChange }) => {
           value={value}
           onSubmit={onSubmit}
           onChange={onChange}
+          onClick={onClick}
         />
       )}
       <img

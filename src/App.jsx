@@ -36,7 +36,7 @@ const App = () => {
     }
 
     if (isClassicBoxChecked) {
-      queryParams.push(`&brewed_before=05-2007}`);
+      queryParams.push(`&brewed_before=05-2007`);
     }
 
     if (isResetClicked) {
@@ -47,6 +47,8 @@ const App = () => {
 
     const response = await fetch(url + queryParams.join(""));
     const data = await response.json();
+    console.log(url + queryParams.join(""));
+    console.log(queryParams);
 
     // pH value filters is not available in the Punk API
     // i.e manual filters is required
@@ -63,6 +65,7 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsReset(false);
     const userSearchValue = event.target.elements[0].value;
     setSearchValue(userSearchValue);
 
@@ -72,6 +75,7 @@ const App = () => {
   };
 
   const handleFilters = (event) => {
+    setIsReset(false);
     if (event.target.classList[0].includes("vol")) {
       setIsABVChecked(!isABVChecked);
     }
@@ -88,9 +92,9 @@ const App = () => {
     }
   };
 
-  const handleReset = (event) => {
-    event.preventDefault();
-    setIsReset(!isReset);
+  const handleReset = () => {
+    setIsReset(true);
+    setSearchValue();
   };
 
   useEffect(() => {
@@ -115,8 +119,9 @@ const App = () => {
     <>
       <Navbar
         value={searchValue}
-        onSubmit={isReset ? handleReset : handleSubmit}
+        onSubmit={handleSubmit}
         onChange={handleFilters}
+        onClick={handleReset}
       />
       <Main beers={beers} />
     </>

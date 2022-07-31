@@ -3,7 +3,7 @@
 .button {
     position: relative;
     top: 1.2rem;
-    left: 1.6rem;
+    left: 4.3rem;
     margin-bottom: 10rem;
     border: 1px solid $text-color;
     border-radius: 0.3rem;
@@ -23,20 +23,23 @@
     &--secondary {
      background-image: $card-color;
      color: $frame-color;
+     position: absolute;
      left: 1rem;
+     top: 8rem;
     }
 }
 
 @media screen and (min-width: 768px) {
     .button {
         top: 1rem;
-        left: 2.6rem;
+        left: 6.5rem;
         margin-bottom: 13rem;
         padding: 0.3rem;
         font-size: 1.2rem;
 
         &--secondary {
-            left: 1.6rem;
+            left: 1.2rem;
+            top: 11rem;
         }
     }
 }
@@ -44,7 +47,7 @@
 @media screen and (min-width: 1024px) {
     .button {    
         top: 1.5rem;
-        left: 3.5rem;
+        left: 10rem;
         margin-bottom: 12rem;
         padding: 0.5rem;
         font-size: 1.5rem;
@@ -52,6 +55,7 @@
 
         &--secondary {
             left: 1.5rem;
+            top: 9.7rem;
         }
     }
 }
