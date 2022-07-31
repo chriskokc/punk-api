@@ -3,11 +3,11 @@ import "./Navbar.scss";
 import menu from "../../assets/images/menu-icon.png";
 import SideNavbar from "../SideNavbar/SideNavbar";
 
-const Navbar = ({ value, onSubmit, onChange, onClick }) => {
+const Navbar = ({ onSubmit, onChange, onClick }) => {
   const [showSideNav, setShowSideNav] = useState(false);
 
   const toggleSideNav = () => {
-    return setShowSideNav(!showSideNav);
+    setShowSideNav(!showSideNav);
   };
 
   return (
@@ -15,7 +15,6 @@ const Navbar = ({ value, onSubmit, onChange, onClick }) => {
       {showSideNav && (
         <SideNavbar
           toggleSideNav={toggleSideNav}
-          value={value}
           onSubmit={onSubmit}
           onChange={onChange}
           onClick={onClick}

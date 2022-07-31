@@ -116,7 +116,6 @@ const App = () => {
   return (
     <>
       <Navbar
-        value={searchValue}
         onSubmit={handleSubmit}
         onChange={handleFilters}
         onClick={handleReset}
