@@ -47,8 +47,6 @@ const App = () => {
 
     const response = await fetch(url + queryParams.join(""));
     const data = await response.json();
-    console.log(url + queryParams.join(""));
-    console.log(queryParams);
 
     // pH value filters is not available in the Punk API
     // i.e manual filters is required
