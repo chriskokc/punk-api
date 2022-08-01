@@ -37,7 +37,7 @@ This project is built in React and data was fetched from Punk API: https://punka
 
 
 - Functionalities
-  This Punk API project can achieve search and filter functions. Users can find the bees by simply putting search queries or use the checkbox to find the categories of beers they want. They were achieved by using React Hook so that re-renders happen when the prop or state of a componet was changed.
+  - This Punk API project can achieve search and filter functions. Users can find the bees by simply putting search queries or use the checkbox to find the categories of beers they want. They were achieved by using React Hook so that re-renders happen when the prop or state of a componet was changed.
   
   - Using the search bar to search for IPAs:
   
